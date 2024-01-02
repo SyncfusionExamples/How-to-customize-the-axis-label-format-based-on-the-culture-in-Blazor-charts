@@ -1,12 +1,12 @@
 # How-to-customize-the-axis-label-format-based-on-the-culture-in-Blazor-charts
 
-This article explains how to format axis label based on culture in blazor chart.
+This article explains how to format axis label based on culture in Blazor Chart Component.
 
-**Format axis label based on culture**
+**Format axis label based on culture in Blazor chart**
 
 [Blazor chart](https://www.syncfusion.com/blazor-components/blazor-charts) allows you to change the axis label format using [LabelFormat](https://help.syncfusion.com/cr/blazor/Syncfusion.Blazor.Charts.ChartAxis.html#Syncfusion_Blazor_Charts_ChartAxis_LabelFormat) property in chart axis.
 
-The following steps need to follow to format the axis label based on culture.
+The following steps need to follow to format the axis label based on culture(Euro).
 
 **Step1:** Need to set the culture in program.cs file as follows.
 
@@ -16,7 +16,7 @@ app.UseRequestLocalization("en-IE"); // for Euro
 
 **Step 2:** Then create a chart series with label format property. For example here we used spline series with label format.
 
-**C#**
+**Index.razor**
 
 ```cshtml
 
@@ -59,7 +59,7 @@ app.UseRequestLocalization("en-IE"); // for Euro
 
 ```
 
-The following screenshot illustrate the output of the above code snippet.
+The following screenshot illustrates the output of the above code snippet.
 
 **Output:**
 
