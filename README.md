@@ -63,7 +63,7 @@ The following screenshot illustrates the output of the above code snippet.
 
 **Output:**
 
-![](/culture%20.png)
+![](/culture.png)
 
 **Conclusion**
 
