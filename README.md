@@ -4,17 +4,15 @@ This article explains how to format axis label based on culture in Blazor Chart 
 
 **Format axis label based on culture in Blazor chart**
 
-[Blazor chart](https://www.syncfusion.com/blazor-components/blazor-charts) allows you to change the axis label format using [LabelFormat](https://help.syncfusion.com/cr/blazor/Syncfusion.Blazor.Charts.ChartAxis.html#Syncfusion_Blazor_Charts_ChartAxis_LabelFormat) property in chart axis.
+[Blazor Chart](https://www.syncfusion.com/blazor-components/blazor-charts) allows you to change the axis label format using [LabelFormat](https://help.syncfusion.com/cr/blazor/Syncfusion.Blazor.Charts.ChartAxis.html#Syncfusion_Blazor_Charts_ChartAxis_LabelFormat) property in chart axis. 
 
-The following steps need to follow to format the axis label based on culture(Euro).
-
-**Step1:** Need to set the culture in program.cs file as follows.
+To set the desired culture in the program.cs file, use the following code. In this example, I have used the "en-IE" culture to display the "Euro" currency symbol.  
 
 ```cshtml
 app.UseRequestLocalization("en-IE"); // for Euro
 ```
 
-**Step 2:** Then create a chart series with label format property. For example here we used spline series with label format.
+The following code example demonstrates how to format axis label to currency by using [LabelFormat](https://help.syncfusion.com/cr/blazor/Syncfusion.Blazor.Charts.ChartAxis.html#Syncfusion_Blazor_Charts_ChartAxis_LabelFormat) property.
 
 **Index.razor**
 
@@ -27,7 +25,7 @@ app.UseRequestLocalization("en-IE"); // for Euro
     <ChartPrimaryYAxis LabelFormat="c" Minimum="0"/>
 
     <ChartSeriesCollection>
-        <ChartSeries DataSource="@Data" XName="X" YName="Y" Type="ChartSeriesType.Spline" />
+        <ChartSeries DataSource="@Data" XName="X" YName="Y" Type="ChartSeriesType.Spline"/>
     </ChartSeriesCollection>
 
 </SfChart>
@@ -42,18 +40,18 @@ app.UseRequestLocalization("en-IE"); // for Euro
 
     public List<ChartData> Data = new List<ChartData>
     {
-          new ChartData{ X= 10, Y=7000 },
-          new ChartData{ X= 20, Y= 1000 },
-          new ChartData{ X= 30, Y= 12000 },
-          new ChartData{ X= 40, Y= 14000 },
-          new ChartData{ X= 50, Y= 11000 },
-          new ChartData{ X= 60, Y= 5000 },
-          new ChartData{ X= 70, Y= 7300 },
-          new ChartData{ X= 80, Y= 9000 },
-          new ChartData{ X= 90, Y= 12000 },
-          new ChartData{ X= 100, Y= 14000 },
-          new ChartData{ X= 110, Y= 11000 },
-          new ChartData{ X= 120, Y= 5000 }
+        new ChartData{ X= 10, Y=7000 },
+        new ChartData{ X= 20, Y= 1000 },
+        new ChartData{ X= 30, Y= 12000 },
+        new ChartData{ X= 40, Y= 14000 },
+        new ChartData{ X= 50, Y= 11000 },
+        new ChartData{ X= 60, Y= 5000 },
+        new ChartData{ X= 70, Y= 7300 },
+        new ChartData{ X= 80, Y= 9000 },
+        new ChartData{ X= 90, Y= 12000 },
+        new ChartData{ X= 100, Y= 14000 },
+        new ChartData{ X= 110, Y= 11000 },
+        new ChartData{ X= 120, Y= 5000 }
     };
 }
 
@@ -63,11 +61,11 @@ The following screenshot illustrates the output of the above code snippet.
 
 **Output:**
 
-![](/culture.png)
+![](culture.png)
 
 **Conclusion**
 
-I hope you enjoyed learning how to customize label based on culture in Blazor Chart Component.
+I hope you enjoyed learning how to customize axis label format based on culture in Blazor Chart Component.
 
 You can refer to our [Blazor Chart feature tour](https://www.syncfusion.com/blazor-components/blazor-charts) page to know about its other groundbreaking feature representations and [documentation](https://blazor.syncfusion.com/documentation/chart/getting-started), and how to quickly get started for configuration specifications. You can also explore our [Blazor Chart example](https://blazor.syncfusion.com/demos/chart/line?theme=bootstrap5) to understand how to create and manipulate data.
 
