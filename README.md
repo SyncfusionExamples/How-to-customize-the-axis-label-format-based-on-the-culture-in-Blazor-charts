@@ -1,74 +1,65 @@
-# How-to-customize-the-axis-label-format-based-on-the-culture-in-Blazor-charts
+# How to Customize the Axis Label Format Based on Culture in Blazor Charts
 
-This article explains how to format axis label based on culture in Blazor Chart Component.
+## Overview
 
-**Format axis label based on culture in Blazor chart**
+This sample demonstrates how to format chart axis labels according to the application's active culture settings in Syncfusion [Blazor Charts](https://www.syncfusion.com/blazor-components/blazor-charts). The implementation uses application localization together with chart axis formatting so that numeric values are displayed using culture-specific currency symbols and formatting rules.
 
-[Blazor Chart](https://www.syncfusion.com/blazor-components/blazor-charts) allows you to change the axis label format using [LabelFormat](https://help.syncfusion.com/cr/blazor/Syncfusion.Blazor.Charts.ChartAxis.html#Syncfusion_Blazor_Charts_ChartAxis_LabelFormat) property in chart axis. 
+In the sample, the application is configured to use the `en-IE` culture and the chart's primary Y-axis is formatted as currency. This approach ensures that chart data is presented consistently with the regional settings expected by users.
 
-To set the desired culture in the program.cs file, use the following code. In this example, I have used the "en-IE" culture to display the "Euro" currency symbol.  
+## Key Features
 
-```cshtml
-app.UseRequestLocalization("en-IE"); // for Euro
+- Uses the `SfChart` component to render chart data.
+- Configures a spline series through `ChartSeries` with `Type="ChartSeriesType.Spline"`.
+- Binds chart data using the `DataSource`, `XName`, and `YName` properties.
+- Formats axis labels using the `ChartPrimaryYAxis` `LabelFormat` property.
+- Demonstrates currency formatting through `LabelFormat="c"`.
+- Shows culture-aware rendering by configuring request localization with:
+  - `app.UseRequestLocalization("en-IE")`
+- Uses a strongly typed `ChartData` model containing:
+  - `double X`
+  - `double Y`
+
+## Prerequisites
+
+- [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/)
+- [.NET SDK](https://dotnet.microsoft.com/en-us/download/dotnet) compatible with the project's target framework
+
+## How to Run the Project
+
+**Visual Studio 2022**
+
+1. Clone or download this repository.
+2. Open the project file located inside the `Culture` folder.
+3. Restore all NuGet packages.
+4. Build the project.
+5. Run the application using `Ctrl+F5`.
+
+**Visual Studio Code**
+
+1. Clone or download this repository.
+2. Open the repository folder in Visual Studio Code.
+3. Open the integrated terminal.
+4. Navigate to the project directory.
+
+```bash
+cd Culture
+dotnet restore
+dotnet run
 ```
 
-The following code example demonstrates how to format axis label to currency by using [LabelFormat](https://help.syncfusion.com/cr/blazor/Syncfusion.Blazor.Charts.ChartAxis.html#Syncfusion_Blazor_Charts_ChartAxis_LabelFormat) property.
+5. Open the local URL displayed in the terminal after the application starts.
 
-**Index.razor**
+## Project Structure
 
-```cshtml
+- `Pages/Index.razor` - Implements the `SfChart` component, chart data model, data collection, spline series configuration, and axis label formatting.
+- `Program.cs` - Configures application localization using `UseRequestLocalization("en-IE")`.
 
-@using Syncfusion.Blazor.Charts
+## Support and Feedback
 
-<SfChart Title="Sales Comparison">
+- For general product questions, visit the [Syncfusion Community Forum](https://www.syncfusion.com/forums) or [Syncfusion Support](https://www.syncfusion.com/support).
+- To report an issue specific to this sample, open a GitHub issue in this repository.
+- Refer to the official Chart Axis API documentation: https://help.syncfusion.com/cr/blazor/Syncfusion.Blazor.Charts.ChartAxis.html
 
-    <ChartPrimaryYAxis LabelFormat="c" Minimum="0"/>
+## License
 
-    <ChartSeriesCollection>
-        <ChartSeries DataSource="@Data" XName="X" YName="Y" Type="ChartSeriesType.Spline"/>
-    </ChartSeriesCollection>
-
-</SfChart>
-
-@code {
-
-    public class ChartData
-    {
-        public double X { get; set; }
-        public double Y { get; set; }
-    }
-
-    public List<ChartData> Data = new List<ChartData>
-    {
-        new ChartData{ X= 10, Y=7000 },
-        new ChartData{ X= 20, Y= 1000 },
-        new ChartData{ X= 30, Y= 12000 },
-        new ChartData{ X= 40, Y= 14000 },
-        new ChartData{ X= 50, Y= 11000 },
-        new ChartData{ X= 60, Y= 5000 },
-        new ChartData{ X= 70, Y= 7300 },
-        new ChartData{ X= 80, Y= 9000 },
-        new ChartData{ X= 90, Y= 12000 },
-        new ChartData{ X= 100, Y= 14000 },
-        new ChartData{ X= 110, Y= 11000 },
-        new ChartData{ X= 120, Y= 5000 }
-    };
-}
-
-```
-
-The following screenshot illustrates the output of the above code snippet.
-
-**Output:**
-
-![](culture.png)
-
-**Conclusion**
-
-I hope you enjoyed learning how to customize axis label format based on culture in Blazor Chart Component.
-
-You can refer to our [Blazor Chart feature tour](https://www.syncfusion.com/blazor-components/blazor-charts) page to know about its other groundbreaking feature representations and [documentation](https://blazor.syncfusion.com/documentation/chart/getting-started), and how to quickly get started for configuration specifications. You can also explore our [Blazor Chart example](https://blazor.syncfusion.com/demos/chart/line?theme=bootstrap5) to understand how to create and manipulate data.
-
-For current customers, you can check out our components from the [License and Downloads](https://www.syncfusion.com/sales/teamlicense) page. If you are new to Syncfusion, you can try our 30-day [free trial](https://www.syncfusion.com/downloads/blazor) to check out our other controls.
-
-If you have any queries or require clarifications, please let us know in the comments section below. You can also contact us through our [support forums](https://www.syncfusion.com/forums), [support portal](https://support.syncfusion.com/create), or [feedback portal](https://www.syncfusion.com/feedback/blazor-components?control=charts). We are always happy to assist you!
+This is a Syncfusion sample project provided to demonstrate product usage. Review the [Syncfusion license terms](https://www.syncfusion.com/sales/pricing?category=ui-components) before using Syncfusion components in your own applications.
