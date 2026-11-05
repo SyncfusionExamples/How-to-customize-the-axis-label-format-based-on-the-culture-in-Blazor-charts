@@ -14,7 +14,7 @@ app.UseRequestLocalization("en-IE"); // for Euro
 
 The following code example demonstrates how to format axis label to currency by using [LabelFormat](https://help.syncfusion.com/cr/blazor/Syncfusion.Blazor.Charts.ChartAxis.html#Syncfusion_Blazor_Charts_ChartAxis_LabelFormat) property.
 
-**Index.razor**
+**Home.razor**
 
 ```cshtml
 
